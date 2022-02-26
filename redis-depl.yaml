@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-cli
+  namespace: demo
+  labels:
+    app: redis
+spec:
+  containers:
+  - image: redis:6.2.3-alpine
+    command:
+      - "sleep"
+      - "100000"
+    imagePullPolicy: IfNotPresent
+    name: ubuntu
+  restartPolicy: Always
